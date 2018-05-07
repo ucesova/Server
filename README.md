@@ -54,8 +54,7 @@ The application was tested in Google Chrome (version 52.0.2743.116), Mozilla Fir
 
 ### Technical Requirements
 
-* 
-* To use the quiz app, the device needs to be connected to the UCL network so a UCL user and password is needed. To access to it remotely from a mobile device you may use CISCO VPN App. 
+* To acces the question setting app, the device needs to be connected to the UCL network so a UCL user and password is needed. To access to it remotely from a mobile device you may use CISCO VPN App. 
 
 ### User guide
 The user guide is accessible from the app clicking on the menu on “user guide”.
@@ -102,10 +101,8 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [PhoneGap]() version 7.1.1
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
+* [PhoneGap](https://phonegap.com/) version 7.1.1 - 
+* [Bitvise SSH Client](https://www.bitvise.com/ssh-client) - SSH file transfer, terminal and tunneling
 
 ## Acknowledgments
 
