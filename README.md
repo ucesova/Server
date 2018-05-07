@@ -26,8 +26,9 @@ The app was successfully tested in different locations around London on a Moto G
 * To use the quiz app, the device needs to be connected to the UCL network so a UCL user and password is needed. To access to it remotely from a mobile device you may use CISCO VPN App. 
 
 ### How to install it in your phone: 
-* Make sure that you have a file manager app in your mobile phone
-* Download the app from the following link
+* Make sure that you have a file manager app and a QR code scanner in your mobile phone.
+* Go to the following [link](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3151570/install/hWaZttdRGhwUJYRmNMRC&chld=L|1&choe=UTF-8) and scan the QR code that it contain.
+* Once downloaded on your phone, open the file and the press “install”.
 
 ### User guide
 The user guide is accessible from the app clicking on the menu on “user guide”.
@@ -52,11 +53,8 @@ The application was tested in Google Chrome (version 52.0.2743.116), Mozilla Fir
 
 ### Technical Requirements
 
-* .
-* To use the quiz app, the device needs to be connected to the UCL network so a UCL user and password is needed. To access to it remotely from a mobile device you may use CISCO VPN App. 
-
-### How to install it in your phone: 
 * 
+* To use the quiz app, the device needs to be connected to the UCL network so a UCL user and password is needed. To access to it remotely from a mobile device you may use CISCO VPN App. 
 
 ### User guide
 The user guide is accessible from the app clicking on the menu on “user guide”.
@@ -90,55 +88,12 @@ This server allows cross origin request (i.e. making data requests from this ser
 
 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
 
 ```
 Give examples
 ```
 
-### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style 
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
