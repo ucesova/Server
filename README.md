@@ -35,9 +35,9 @@ The user guide is accessible from the app clicking on the menu on â€œuser guideâ
 
 ### APIs used
 * Leaflet v.1.1.0 for the web map. 
-This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html)file
+This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html) file.
 * Mapbox v.4 for the basemap tiles.
-This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html)file
+This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html) file.
 * Material Design Lite v. 1.3.0, specifically its dashboard template
 This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html) and in the [quizuserguide.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/quizuserguide.html) files.
 
