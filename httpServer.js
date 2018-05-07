@@ -1,24 +1,30 @@
-
- 
+// Node.js HTTP server to serve both, the Quiz_App and the Question setting app
 
 // express is the server that forms part of the nodejs program
-var express = require('express');
+var express = require('express'); // import the express API
 var path = require("path");
-var app = express();
+var app = express(); // set up an app to run the server, using the imported express API
+
+// add an http server to serve files to the Edge browser 
+// due to certificate issues it rejects the https files if they are not
+// directly called in a typed URL
+var http = require('http'); // import the http package
+var httpServer = http.createServer(app); // create the server
+httpServer.listen(4480); // the port to be listened
 
 // adding functionality to allow cross-domain queries when PhoneGap is running a server
-	app.use(function(req, res, next) {
-		res.setHeader("Access-Control-Allow-Origin", "*");
-		res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
-		res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-		next();
-	});
+app.use(function(req, res, next) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+	res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	next();
+});
 
 // read in the file and force it to be a string by adding “” at the beginning
 var fs = require ('fs');
 var configtext =
 ""+fs.readFileSync("/home/studentuser/certs/postGISConnection.js");
-// now convert the configruation file into the correct format -i.e. a name/value pair array
+// now convert the configuration file into the correct format -i.e. a name/value pair array
 var configarray = configtext.split(",");
 var config = {};
 for (var i = 0; i < configarray.length; i++) {
@@ -48,7 +54,7 @@ app.get('/postgistest', function (req,res) {
 });
 
 
-app.get('/getPOI', function (req,res) {
+app.get('/getQuestions', function (req,res) {
 	pool.connect(function(err,client,done) {
 		if(err){
 			console.log("not able to get connection "+ err);
@@ -88,17 +94,6 @@ app.get('/getPOI', function (req,res) {
 		next();
 	});
 	
-
-	// add an http server to serve files to the Edge browser 
-	// due to certificate issues it rejects the https files if they are not
-	// directly called in a typed URL
-	var http = require('http');
-	var httpServer = http.createServer(app); 
-	httpServer.listen(4480);
-
-	app.get('/',function (req,res) {
-		res.send("hello world from the HTTP server");
-	});
 
 // making the GeoJSON server more flexible to return GeoJSON from any table
 app.get('/getGeoJSON/:tablename/:geomcolumn', function (req,res) {
@@ -165,6 +160,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// upload the questions into the questions table in the database
 app.post('/uploadData',function(req,res){
 	// note that we are using POST here as we are uploading data
 	// so the parameters form part of the BODY of the request rather than the RESTful API
@@ -189,14 +185,40 @@ app.post('/uploadData',function(req,res){
 		client.query( querystring,function(err,result) {
 			done();
 			if(err){
-			console.log(err);
-			res.status(400).send(err);
+				console.log(err);
+				res.status(400).send(err);
 			}
 			res.status(200).send("your question and choices were saved");
 		});
 	});
 });
+
+// save the answers to the database
+app.post('/Quiz_App_uploadData',function(req,res){
+	// note that we are using POST here as we are uploading data
+	// so the parameters form part of the BODY of the request rather than the RESTful API
+	console.dir(req.body);
 	
+	pool.connect(function(err,client2,done) {
+		if(err){
+		console.log("not able to get connection "+ err);
+		res.status(400).send(err);
+		}
+
+		var querystring = "INSERT into answers (question, users_answer) values ('" + req.body.question + "','" + req.body.users_answer + "')";		
+
+		console.log(querystring);
+		client2.query(querystring,function(err,result) {
+			done();
+			if(err){
+				console.log(err);
+				res.status(400).send(err);
+			}
+			res.status(200).send("your answer was saved");
+		});
+	});
+});
+
 	// the / indicates the path that you type into the server - in this case, what happens when you type in:  http://developer.cege.ucl.ac.uk:32560/xxxxx/xxxxx
   app.get('/:name1', function (req, res) {
   // run some server-side code
