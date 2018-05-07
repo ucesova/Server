@@ -41,6 +41,7 @@ This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/maste
 * Material Design Lite v. 1.3.0, specifically its dashboard template
 This was used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html) and in the [quizuserguide.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/quizuserguide.html) files.
 
+
 ## 2.	Question setting app: 
 
 The question setting app is designed to allow the administrator of a Quiz App instance to define the location of the POIs and the questions related to them, their choices and correct choice, and save all these information into the database.
@@ -67,7 +68,8 @@ Used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova
 * Material Design Lite v. 1.3.0, specifically its dashboard template. 
 Used in the [index.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/index.html) and in the [quizuserguide.html](https://github.com/ucesova/Quiz_App/blob/master/ucesova/www/quizuserguide.html) files.
 
-## 2.	Server: 
+
+## 3.	Server: 
 
 The server side code of both, the Quiz app and the Question setting app is developed on the [Node.js](https://nodejs.org/en/) environment using the express API. For both apps, the server-side code was stored in the same Node.js file, called [httpServer.js](https://github.com/ucesova/Server/blob/master/httpServer.js) which, true to its name, is an HTTP server to ensure it works in all browsers and with PhoneGap.
 
