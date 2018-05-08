@@ -14,7 +14,7 @@ All the code to develop these two parts and the server are available on three se
 ## 1.	Mobile quiz app: 
 The quiz app is designed to track the movement of the user, shows it on a map and compares its location with the location of different points of interest (POI) obtained from a postGres database, which have a question related to each of them. When the user is near to a POI, the app shows an alert asking him to answer the related question. This question is displayed below the map and shows multiple choices. After the user answers the question, his answer is saved into the database and the correct answer is showed to him. For this project, and as a possible deployment example, the quiz app was called “ArchiQuiz” which asks about the architectural style of different buildings around London.
 
-To do this, the app uses the HTML 5 in-build location services that allow the app to find the position of the device and tracks its movements. 
+To do this, the app uses the HTML 5 in-built location services that allow the app to find the position of the device and tracks its movements. 
 
 The distance between the device location and the POIs is calculated using the Haversine formula and [Rob Gravelle’s code](https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-in-your-web-apps.html)
 
