@@ -27,7 +27,7 @@ The app was successfully tested in different locations around London on a Moto G
 
 ### How to install it in your phone: 
 * Make sure that you have a file manager app and a QR code scanner on your mobile phone.
-* Go to the following [link](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3151570/install/hWaZttdRGhwUJYRmNMRC&chld=L|1&choe=UTF-8) and scan the QR code that it contain.
+* Go to the following [link](https://chart.googleapis.com/chart?chs=116x116&cht=qr&chl=https://build.phonegap.com/apps/3151570/install/hWaZttdRGhwUJYRmNMRC&chld=L|1&choe=UTF-8) and scan the QR code that it contains.
 * Once downloaded on your phone, open the file and the press “install”.
 
 ### User guide
